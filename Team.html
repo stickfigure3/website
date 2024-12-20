@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add a top margin so that content appears below the fixed banner and header */
+        main {
+            margin-top: 100px; /* Adjust if needed to ensure the header is fully visible */
+        }
+
+        .team-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f5f5f5;
+            padding: 60px 20px;
+        }
+
+        .team-section-title {
+            font-size: 2em;
+            text-decoration: underline;
+            margin-bottom: 40px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .team-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding-bottom: 20px;
+        }
+
+        .team-card-image {
+            background-color: #000;
+            width: 100%;
+            height: 150px; /* Placeholder black area */
+        }
+
+        .team-card-content {
+            padding: 20px;
+        }
+
+        .team-card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.2em;
+        }
+
+        .team-card p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .team-card a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .team-card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Gray Banner (fixed behind header and navigation) -->
+    <div class="banner"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="Home.html">
+                    <img src="images/iba-pick.jpg" alt="Logo" class="logo-image">
+                </a>
+            </div>
+            <nav>
+                <ul class="dropdown-menu">
+                    <!-- "Category 1" now directly links to Home.html and has no submenu -->
+                    <li class="menu-item">
+                        <a href="Home.html">HOME</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="Partnerships.html">PARTNERSHIPS</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="Team.html">TEAM</a>
+                    </li>
+                    <li class="menu-item">
+                        Category 4
+                        <ul class="submenu">
+                            <li><a href="option4.html">Option 1</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Executive Management Section -->
+        <section class="team-section">
+            <h2 class="team-section-title">Executive Management</h2>
+            <div class="team-grid">
+                <!-- Philip Aizenstein -->
+                <div class="team-card">
+                    <div class="team-card-image"></div>
+                    <div class="team-card-content">
+                        <h3>Philip Aizenstein</h3>
+                        <p>President</p>
+                        <p>Major: Industrial Engineering</p>
+                        <p>LinkedIn</p>
+                        <p>philip.acohn@polifinance.com.br</p>
+                    </div>
+                </div>
+
+                <!-- Angela Zarzur -->
+                <div class="team-card">
+                    <div class="team-card-image"></div>
+                    <div class="team-card-content">
+                        <h3>Angela Zarzur</h3>
+                        <p>Vice President</p>
+                        <p>Major: Industrial Engineering</p>
+                        <p>LinkedIn</p>
+                        <p>angela.zarzur@polifinance.com.br</p>
+                    </div>
+                </div>
+
+                <!-- Henrique Patarra -->
+                <div class="team-card">
+                    <div class="team-card-image"></div>
+                    <div class="team-card-content">
+                        <h3>Henrique Patarra</h3>
+                        <p>Academic Director</p>
+                        <p>Major: Industrial Engineering</p>
+                        <p>LinkedIn</p>
+                        <p>henrique.patarra@polifinance.com.br</p>
+                    </div>
+                </div>
+
+                <!-- Vinícius Sayegh -->
+                <div class="team-card">
+                    <div class="team-card-image"></div>
+                    <div class="team-card-content">
+                        <h3>Vinícius Sayegh</h3>
+                        <p>Research Director</p>
+                        <p>Major: Industrial Engineering</p>
+                        <p>LinkedIn</p>
+                        <p>vinicius.sayegh@polifinance.com.br</p>
+                    </div>
+                </div>
+
+                <!-- Patrick Denardi -->
+                <div class="team-card">
+                    <div class="team-card-image"></div>
+                    <div class="team-card-content">
+                        <h3>Patrick Denardi</h3>
+                        <p>Financial Director</p>
+                        <p>Major: Industrial Engineering</p>
+                        <p>LinkedIn</p>
+                        <p>patrick.denardi@polifinance.com.br</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Actives Section -->
+        <section class="team-section">
+            <h2 class="team-section-title">Actives</h2>
+            <div class="team-grid">
+                <!-- Alessandro Batista -->
+                <div class="team-card">
+                    <div class="team-card-image"></div>
+                    <div class="team-card-content">
+                        <h3>Alessandro Batista</h3>
+                        <p>Senior Associate</p>
+                        <p>Major: Industrial Engineering</p>
+                        <p>LinkedIn</p>
+                        <p>alessandro.bpassos@polifinance.com.br</p>
+                    </div>
+                </div>
+
+                <!-- Fernando Jardim -->
+                <div class="team-card">
+                    <div class="team-card-image"></div>
+                    <div class="team-card-content">
+                        <h3>Fernando Jardim</h3>
+                        <p>Senior Associate</p>
+                        <p>Major: Industrial Engineering</p>
+                        <p>LinkedIn</p>
+                        <p>fernando.jardim@polifinance.com.br</p>
+                    </div>
+                </div>
+
+                <!-- Arthur Pawlaski -->
+                <div class="team-card">
+                    <div class="team-card-image"></div>
+                    <div class="team-card-content">
+                        <h3>Arthur Pawlaski</h3>
+                        <p>Senior Associate</p>
+                        <p>Major: Industrial Engineering</p>
+                        <p>LinkedIn</p>
+                        <p>arthur.pawlaski@polifinance.com.br</p>
+                    </div>
+                </div>
+
+                <!-- Heitor Duarte -->
+                <div class="team-card">
+                    <div class="team-card-image"></div>
+                    <div class="team-card-content">
+                        <h3>Heitor Duarte</h3>
+                        <p>Senior Associate</p>
+                        <p>Major: Industrial Engineering</p>
+                        <p>LinkedIn</p>
+                        <p>heitor.duarte@polifinance.com.br</p>
+                    </div>
+                </div>
+
+                <!-- Leonardo Barone -->
+                <div class="team-card">
+                    <div class="team-card-image"></div>
+                    <div class="team-card-content">
+                        <h3>Leonardo Barone</h3>
+                        <p>Senior Associate</p>
+                        <p>Major: Industrial Engineering</p>
+                        <p>LinkedIn</p>
+                        <p>leo.barone@polifinance.com.br</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

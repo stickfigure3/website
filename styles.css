@@ -7,11 +7,13 @@ body, html {
     overflow-x: hidden;
 }
 
+
 /* Make space for the fixed banner and header so content isn't hidden */
 body {
     /* Adjust padding-top if needed depending on combined banner/header height */
     padding-top: 5px; /* 80px banner + 80px header = 160px */
 }
+
 
 /* Banner */
 .banner {
@@ -23,6 +25,7 @@ body {
     background-color: #070707;
     z-index: 998;
 }
+
 
 /* Header */
 header {
@@ -38,6 +41,7 @@ header {
     z-index: 999;
 }
 
+
 .header-container {
     display: flex;
     align-items: center;
@@ -45,10 +49,12 @@ header {
     width: 100%;
 }
 
+
 .logo-image {
     width: 100px;  
     height: auto;
 }
+
 
 .dropdown-menu {
     list-style: none;
@@ -58,15 +64,18 @@ header {
     padding: 0;
 }
 
+
 .menu-item {
     position: relative;
     cursor: pointer;
 }
 
+
 .menu-item a {
     color: #fff;
     text-decoration: none;
 }
+
 
 .submenu {
     display: none;
@@ -80,18 +89,22 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+
 .submenu li {
     padding: 5px 20px;
 }
+
 
 .submenu li a {
     color: #fff;
     text-decoration: none;
 }
 
+
 .menu-item:hover .submenu {
     display: block;
 }
+
 
 /* Section Styles */
 .section {
@@ -102,9 +115,11 @@ header {
     padding: 20px;
 }
 
+
 .section-1 {
     display: flex;
 }
+
 
 .section-1 .left-content {
     flex: 1;
@@ -114,10 +129,12 @@ header {
     background-color: #f5f5f5;
 }
 
+
 .section-1 .left-content img {
     max-width: 100%;
     max-height: 100%;
 }
+
 
 .section-1 .right-content {
     flex: 1;
@@ -131,15 +148,18 @@ header {
     text-align: center;
 }
 
+
 .section-2, .section-3 {
     background-color: #f5f5f5;
 }
+
 
 .section-title {
     font-size: 2em;
     text-decoration: underline;
     margin-bottom: 20px;
 }
+
 
 .grid-container {
     display: grid;
@@ -148,6 +168,7 @@ header {
     width: 80%;
     margin: 0 auto; /* Center the grid */
 }
+
 
 .grid-container div {
     background-color: rgba(255, 255, 255, 0.8);
@@ -158,6 +179,7 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
+
 
 .grid-container div:hover {
     transform: scale(1.05);
