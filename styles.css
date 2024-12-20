@@ -7,17 +7,28 @@ body, html {
     overflow-x: hidden;
 }
 
-hheader {
+/* Gray Banner */
+.banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px; /* Adjust as needed */
+    background-color: gray;
+    z-index: 1;
+}
+
+/* Header */
+header {
     width: 100%;
     height: 80px;
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent to see banner behind if desired */
     color: #fff;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 30px 20px;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Stays above the banner */
 }
 
 .header-container {
@@ -28,10 +39,9 @@ hheader {
 }
 
 .logo-image {
-    width: 125px;  /* Adjust this to your desired width */
-    height: auto;  /* This ensures the aspect ratio stays intact */
+    width: 125px;  
+    height: auto;
 }
-
 
 .dropdown-menu {
     list-style: none;
@@ -50,7 +60,6 @@ hheader {
     color: #fff;
     text-decoration: none;
 }
-
 
 .submenu {
     display: none;
