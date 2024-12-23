@@ -6,6 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multi-Section Website</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Apply the background image */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('images/skyline.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff; /* Ensure text stands out against the background */
+        }
+
+        /* Centered text styles */
+        .center-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff; /* Ensure the text contrasts the background */
+        }
+
+        .center-text h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .center-text p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+    </style>
 </head>
 <body>
     <!-- Gray Banner (fixed behind header and navigation) -->
@@ -44,3 +77,10 @@
     </header>
 </body>
 </html>
+
+<main>
+    <div class="center-text">
+        <h1>Welcome to Our Challenges Page</h1>
+        <p>Comming soon...</p>
+    </div>
+</main>
