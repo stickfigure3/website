@@ -1,20 +1,87 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Page</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .team-video-section {
+            position: relative;
+            height: 100vh; /* Full height of the viewport */
+            overflow: hidden;
+            background: url('images/IMG_5990_Original.jpg') center/cover no-repeat; /* Highlighted: Set the image as the background */
+            margin-top: 30px; /* Adjust this value */
+        }
+
+        .team-video-section video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 1;
+            transition: opacity 1s ease; /* Fade effect */
+        }
+
+        .team-video-section video.hidden {
+            opacity: 0; /* Make the video invisible during the transition */
+        }
+
+        .team-header {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black; /* Changed to black */
+            font-size: 4rem;
+            font-weight: bold;
+            z-index: 2;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7); /* Adjusted for visibility */
+        }
+
+        .team-section {
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        .team-section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .team-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-card h3 {
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
     <!-- Gray Banner (fixed behind header and navigation) -->
     <div class="banner"></div>
 
     <!-- Header -->
-</head>
-<body>
-    <!-- Header Component -->
     <header>
         <div class="header-container">
             <div class="logo">
@@ -24,159 +91,197 @@
             </div>
             <nav>
                 <ul class="dropdown-menu">
-                    <!-- "Category 1" now directly links to Home.html and has no submenu -->
-                    <li class="menu-item">
-                        <a href="Home.html">HOME</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="Partnerships.html">PARTNERSHIPS</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="Team.html">TEAM</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="Challenges.html">CHALLENGES</a>
-                    </li>
+                    <li class="menu-item"><a href="Home.html">HOME</a></li>
+                    <li class="menu-item"><a href="Partnerships.html">PARTNERSHIPS</a></li>
+                    <li class="menu-item"><a href="Team.html">TEAM</a></li>
+                    <li class="menu-item"><a href="Challenges.html">CHALLENGES</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-</body>
-</html>
 
     <!-- Main Content -->
     <main>
-        <!-- Executive Management Section -->
+        <!-- Team Section with Video Background -->
+        <section class="team-video-section">
+            <video id="team-video" autoplay muted>
+                <source src="images/Team.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="team-header">The Team</div>
+        </section>
+
+        <!-- Executive Management Section (4 squares) -->
         <section class="team-section">
             <h2 class="team-section-title">Executive Management</h2>
             <div class="team-grid">
-                <!-- Philip Aizenstein -->
+                <!-- 1 -->
                 <div class="team-card">
-                    <div class="team-card-image"></div>
+                    <!-- Same-size image for MAT -->
+                    <img src="images/MAT.jpg" alt="Profile Photo" style="width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;">
                     <div class="team-card-content">
-                        <h3>Philip Aizenstein</h3>
-                        <p>President</p>
-                        <p>Major: Industrial Engineering</p>
-                        <p>LinkedIn</p>
-                        <p>philip.acohn@polifinance.com.br</p>
+                        <h3>Matteo Tasso Tiete Da Silva</h3>
+                        <p>Founder</p>
+                        <p>Major: Business Management Economics</p>
+                        <p>
+                            <a
+                              href="https://www.linkedin.com/in/matteo-tasso-tiete-da-silva-76b412272/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              LinkedIn
+                            </a>
+                        </p>
+                        <p>MTasso@ucsciba.org</p>
                     </div>
                 </div>
-
-                <!-- Angela Zarzur -->
+                <!-- 2 -->
                 <div class="team-card">
-                    <div class="team-card-image"></div>
+                    <!-- Same-size image for KYLE -->
+                    <img src="images/KYLE.jpg" alt="Profile Photo" style="width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;">
                     <div class="team-card-content">
-                        <h3>Angela Zarzur</h3>
-                        <p>Vice President</p>
-                        <p>Major: Industrial Engineering</p>
-                        <p>LinkedIn</p>
-                        <p>angela.zarzur@polifinance.com.br</p>
+                        <h3>Kyle Kunishige</h3>
+                        <p>Founder</p>
+                        <p>Major: Business Management Economics</p>
+                        <p>
+                            <a
+                              href="https://www.linkedin.com/in/kylekunishige/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              LinkedIn
+                            </a>
+                        </p>
+                        <p>Kkunishige@ucsciba.org</p>
                     </div>
                 </div>
-
-                <!-- Henrique Patarra -->
+                <!-- 3 -->
                 <div class="team-card">
-                    <div class="team-card-image"></div>
+                    <!-- Same-size image for SAIF -->
+                    <img src="images/SAIF.jpg" alt="Profile Photo" style="width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;">
                     <div class="team-card-content">
-                        <h3>Henrique Patarra</h3>
-                        <p>Academic Director</p>
-                        <p>Major: Industrial Engineering</p>
-                        <p>LinkedIn</p>
-                        <p>henrique.patarra@polifinance.com.br</p>
+                        <h3>Saif Al-Hakeem</h3>
+                        <p>Founder</p>
+                        <p>Major: Business Management Economics</p>
+                        <p>
+                            <a
+                              href="https://www.linkedin.com/in/saif-al-hakeem/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              LinkedIn
+                            </a>
+                        </p>
+                        <p>Salhakeem@ucsciba.org</p>
                     </div>
                 </div>
-
-                <!-- Vinícius Sayegh -->
+                <!-- 4 -->
                 <div class="team-card">
-                    <div class="team-card-image"></div>
+                    <!-- Same-size image for DAVDAWG -->
+                    <img src="images/DAVDAWG.jpg" alt="Profile Photo" style="width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;">
                     <div class="team-card-content">
-                        <h3>Vinícius Sayegh</h3>
-                        <p>Research Director</p>
-                        <p>Major: Industrial Engineering</p>
-                        <p>LinkedIn</p>
-                        <p>vinicius.sayegh@polifinance.com.br</p>
-                    </div>
-                </div>
-
-                <!-- Patrick Denardi -->
-                <div class="team-card">
-                    <div class="team-card-image"></div>
-                    <div class="team-card-content">
-                        <h3>Patrick Denardi</h3>
-                        <p>Financial Director</p>
-                        <p>Major: Industrial Engineering</p>
-                        <p>LinkedIn</p>
-                        <p>patrick.denardi@polifinance.com.br</p>
+                        <h3>David Zhou</h3>
+                        <p>Founder</p>
+                        <p>Major: Business Management Economics</p>
+                        <p>
+                            <a
+                              href="https://www.linkedin.com/in/daviddzzhou/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              LinkedIn
+                            </a>
+                        </p>
+                        <p>Dzhou@ucsciba.org</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Actives Section -->
-        <section class="team-section">
+        <!-- Actives Section (4 squares) -->
+        <section class="team-section" style="position: relative;">
             <h2 class="team-section-title">Actives</h2>
+            <!-- Transparent black banner with white lettering -->
+            <div style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.7);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 10;
+            ">
+                <h2 style="color: white; margin: 0; font-size: 2rem;">Comming soon!</h2>
+                <p style="color: white; margin: 0; font-size: 1rem;">Apply now you could be next!</p>
+            </div>
             <div class="team-grid">
-                <!-- Alessandro Batista -->
+                <!-- Active 1 -->
                 <div class="team-card">
-                    <div class="team-card-image"></div>
+                    <img src="images/placeholder.jpg" alt="Profile Photo" style="width:100%; height:auto;">
                     <div class="team-card-content">
-                        <h3>Alessandro Batista</h3>
-                        <p>Senior Associate</p>
+                        <h3>Active Member 1</h3>
+                        <p>Title</p>
                         <p>Major: Industrial Engineering</p>
                         <p>LinkedIn</p>
-                        <p>alessandro.bpassos@polifinance.com.br</p>
+                        <p>member1@polifinance.com.br</p>
                     </div>
                 </div>
-
-                <!-- Fernando Jardim -->
+                <!-- Active 2 -->
                 <div class="team-card">
-                    <div class="team-card-image"></div>
+                    <img src="images/placeholder.jpg" alt="Profile Photo" style="width:100%; height:auto;">
                     <div class="team-card-content">
-                        <h3>Fernando Jardim</h3>
-                        <p>Senior Associate</p>
+                        <h3>Active Member 2</h3>
+                        <p>Title</p>
                         <p>Major: Industrial Engineering</p>
                         <p>LinkedIn</p>
-                        <p>fernando.jardim@polifinance.com.br</p>
+                        <p>member2@polifinance.com.br</p>
                     </div>
                 </div>
-
-                <!-- Arthur Pawlaski -->
+                <!-- Active 3 -->
                 <div class="team-card">
-                    <div class="team-card-image"></div>
+                    <img src="images/placeholder.jpg" alt="Profile Photo" style="width:100%; height:auto;">
                     <div class="team-card-content">
-                        <h3>Arthur Pawlaski</h3>
-                        <p>Senior Associate</p>
+                        <h3>Active Member 3</h3>
+                        <p>Title</p>
                         <p>Major: Industrial Engineering</p>
                         <p>LinkedIn</p>
-                        <p>arthur.pawlaski@polifinance.com.br</p>
+                        <p>member3@polifinance.com.br</p>
                     </div>
                 </div>
-
-                <!-- Heitor Duarte -->
+                <!-- Active 4 -->
                 <div class="team-card">
-                    <div class="team-card-image"></div>
+                    <img src="images/placeholder.jpg" alt="Profile Photo" style="width:100%; height:auto;">
                     <div class="team-card-content">
-                        <h3>Heitor Duarte</h3>
-                        <p>Senior Associate</p>
+                        <h3>Active Member 4</h3>
+                        <p>Title</p>
                         <p>Major: Industrial Engineering</p>
                         <p>LinkedIn</p>
-                        <p>heitor.duarte@polifinance.com.br</p>
-                    </div>
-                </div>
-
-                <!-- Leonardo Barone -->
-                <div class="team-card">
-                    <div class="team-card-image"></div>
-                    <div class="team-card-content">
-                        <h3>Leonardo Barone</h3>
-                        <p>Senior Associate</p>
-                        <p>Major: Industrial Engineering</p>
-                        <p>LinkedIn</p>
-                        <p>leo.barone@polifinance.com.br</p>
+                        <p>member4@polifinance.com.br</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        const video = document.getElementById('team-video');
+
+        // Add event listener for when the video ends
+        video.addEventListener('ended', () => {
+            // Add 'hidden' class to fade out
+            video.classList.add('hidden');
+
+            // Wait for the fade-out effect to complete, then restart the video
+            setTimeout(() => {
+                video.currentTime = 0; // Restart the video
+                video.play(); // Play the video
+                video.classList.remove('hidden'); // Fade back in
+            }, 1000); // Match the transition duration in CSS (1s)
+        });
+    </script>
 </body>
 </html>
