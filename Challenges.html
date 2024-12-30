@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,26 +15,26 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #fff; /* Ensure text stands out against the background */
+            color: #fff; /* Default text color (can be white overall) */
         }
 
-        /* Centered text styles */
+        /* Centered text container */
         .center-text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: #fff; /* Ensure the text contrasts the background */
         }
 
-        .center-text h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-
+        /* Style for the highlighted text */
+        .center-text h1,
         .center-text p {
-            font-size: 1.2em;
+            color: #000; /* Black text */
+            background-color: rgba(255, 255, 255, 0.6); /* Translucent white */
+            display: inline-block; /* So the highlight fits just around the text */
+            padding: 10px 15px;
+            border-radius: 8px;
             margin: 10px 0 0;
         }
     </style>
@@ -44,10 +43,6 @@
     <!-- Gray Banner (fixed behind header and navigation) -->
     <div class="banner"></div>
 
-
-    <!-- Header -->
-</head>
-<body>
     <!-- Header Component -->
     <header>
         <div class="header-container">
@@ -58,7 +53,6 @@
             </div>
             <nav>
                 <ul class="dropdown-menu">
-                    <!-- "Category 1" now directly links to Home.html and has no submenu -->
                     <li class="menu-item">
                         <a href="Home.html">HOME</a>
                     </li>
@@ -75,12 +69,12 @@
             </nav>
         </div>
     </header>
+
+    <main>
+        <div class="center-text">
+            <h1>Welcome to Our Challenges Page</h1>
+            <p>Coming soon...</p>
+        </div>
+    </main>
 </body>
 </html>
-
-<main>
-    <div class="center-text">
-        <h1>Welcome to Our Challenges Page</h1>
-        <p>Comming soon...</p>
-    </div>
-</main>

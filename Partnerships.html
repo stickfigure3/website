@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,9 +11,6 @@
     <div class="banner"></div>
 
     <!-- Header -->
-</head>
-<body>
-    <!-- Header Component -->
     <header>
         <div class="header-container">
             <div class="logo">
@@ -24,7 +20,6 @@
             </div>
             <nav>
                 <ul class="dropdown-menu">
-                    <!-- "Category 1" now directly links to Home.html and has no submenu -->
                     <li class="menu-item">
                         <a href="Home.html">HOME</a>
                     </li>
@@ -41,120 +36,121 @@
             </nav>
         </div>
     </header>
-</body>
-</html>
+
+    <!-- 
+       ======================
+       REPLACED TOP SECTION
+       ======================
+    -->
+    <section
+      style="
+        background-color: #000;
+        text-align: center;
+        padding: 150px 0; /* keeps section large */
+        margin-top: 30px;
+      "
+    >
+      <!-- Partnership Logo (the handshake PNG) -->
+      <img 
+        src="images/PARTNERSHIP.png"
+        alt="Partnership Logo"
+        style="
+          max-width: 255px; /* 25% bigger than 150px */
+          margin: 0 auto 30px auto;
+          display: block;
+        "
+      >
+      
+      <!-- Highlighted “PARTNERSHIPS” Text -->
+      <h1
+        style="
+          display: inline-block;
+          position: relative;
+          font-size: 3.125em; /* 25% bigger than 2.5em */
+          color: #fff;
+          font-weight: 700;
+          margin: 0;
+        "
+      >
+        <span 
+          style="
+            background-color: #fff; 
+            border-radius: 12px; 
+            padding: 0 15px; /* 25% bigger than 0 12px */
+            color: #000;
+          "
+        >
+          PARTNERSHIPS
+        </span>
+      </h1>
+    </section>
+    <!-- END OF REPLACED TOP SECTION -->
 
     <!-- Main Content -->
     <main>
-        <!-- Top Section -->
-        <section class="section" style="flex-direction: row; align-items: stretch;">
-            <!-- Left placeholder for large image -->
-            <div style="flex: 1; background: #000; display: flex; justify-content: center; align-items: center; height: 100%; min-height: 400px;">
-                <!-- Black box placeholder for image -->
-            </div>
-            <!-- Right content: "Our Projects" -->
-            <div style="flex: 1; background-color: #111; color: #fff; display: flex; flex-direction: column; justify-content: center; padding: 40px; text-align: center;">
-                <h1>Our Projects</h1>
-                <p>A financial market league committed to purpose and determination</p>
-            </div>
-        </section>
+        <!-- Partnerships List (Replaced Section) -->
+        <section style="width: 80%; margin: 0 auto; padding: 40px 0;">
 
-        <!-- Community Projects Section -->
-        <section class="section section-2" style="flex-direction: column; align-items: center;">
-            <h2 class="section-title">COMMUNITY PROJECTS</h2>
-           
-            <!-- Grid of Community Projects -->
-            <div class="grid-container" style="grid-template-columns: repeat(3, 1fr);">
-                <div>
-                    <h3>Poli Finance Convida</h3>
-                    <p>Recruitment fair ...</p>
-                    <a href="#" class="see-more">See More</a>
+            <!-- First Partnership Row -->
+            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                <div style="flex: 0 0 auto; margin-right: 20px;">
+                    <img 
+                      src="images/WallStreetPrep_Cropped_Resized.jpg" 
+                      alt="Placeholder Logo" 
+                      style="max-width: 250px;" 
+                    >
                 </div>
-               
-                <div>
-                    <h3>Introduction to the Financial Market Course</h3>
-                    <p>Course given by Poli Finance members...</p>
-                    <a href="#" class="see-more">See More</a>
-                </div>
-
-                <div>
-                    <h3>Finance Talk</h3>
-                    <p>A project that aims to organize major events...</p>
-                    <a href="#" class="see-more">See More</a>
-                </div>
-
-                <div>
-                    <h3>Poli Finance Conference</h3>
-                    <p>Semiannual event to present the group's results...</p>
-                    <a href="#" class="see-more">See More</a>
-                </div>
-
-                <div>
-                    <h3>Politécnicas no Mercado</h3>
-                    <p>Poli Finance's annual project aims ...</p>
-                    <a href="#" class="see-more">See More</a>
-                </div>
-
-                <div>
-                    <h3>In-Company Open Sessions</h3>
-                    <p>The project aims to bring the polytechnic community closer...</p>
-                    <a href="#" class="see-more">See More</a>
-                </div>
-
-                <div>
-                    <h3>Poli Business Review</h3>
-                    <p>Poli's corporate leagues project to bring more knowledge...</p>
-                    <a href="#" class="see-more">See More</a>
-                </div>
-
-                <div>
-                    <h3>Reading Collection</h3>
-                    <p>Collection of works recommended by members ...</p>
-                    <a href="#" class="see-more">See More</a>
+                <div style="flex: 1;">
+                    <h2 style="text-decoration: underline;">
+                        Wall Street Prep, Inc.
+                    </h2>
+                    <p style="font-size: 1.1em; text-align: justify;">
+                        Wall Street Prep is a leading training organization, established in 2004 
+                        by investment bankers to address the gap between academic knowledge and the 
+                        real-world skills needed in the financial services industry. They offer both 
+                        instructor-led and online training programs designed to teach the practical 
+                        tools required to succeed on the job. With a global faculty of over 90 seasoned 
+                        professionals—including investment bankers, private equity experts, and 
+                        investment professionals—Wall Street Prep has become a trusted resource for 
+                        anyone looking to advance their career in finance.
+                    </p>
                 </div>
             </div>
-        </section>
+            <hr>
 
-        <!-- Member Projects Section -->
-        <section class="section section-3" style="flex-direction: column; align-items: center; background-color: #111; color: #fff;">
-            <h2 class="section-title" style="color: #fff;">Member Projects</h2>
-           
-            <div class="grid-container" style="grid-template-columns: repeat(3, 1fr);">
-                <div style="background-color: rgba(255,255,255,0.1);">
-                    <h3 style="color:#fff;">Investment Club</h3>
-                    <p>Poli Finance is proud to announce ...</p>
+            <!-- Second Partnership Row -->
+            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                <div style="flex: 0 0 auto; margin-right: 20px;">
+                    <img 
+                      src="images/WHARTON ONLINE LOGO.png" 
+                      alt="Placeholder Logo" 
+                      style="max-width: 250px;"
+                    >
                 </div>
-
-                <div style="background-color: rgba(255,255,255,0.1);">
-                    <h3 style="color:#fff;">In-Company</h3>
-                    <p>Visits to Financial institutions aiming ...</p>
-                </div>
-
-                <div style="background-color: rgba(255,255,255,0.1);">
-                    <h3 style="color:#fff;">Tutoring</h3>
-                    <p>Made by former members of Poli Finance ...</p>
-                </div>
-
-                <div style="background-color: rgba(255,255,255,0.1);">
-                    <h3 style="color:#fff;">Trainings</h3>
-                    <p>Made with banks and partner institutions ...</p>
-                </div>
-
-                <div style="background-color: rgba(255,255,255,0.1);">
-                    <h3 style="color:#fff;">Equity Research, Private Equity and M&A</h3>
-                    <p>Projects aimed at developing skills ...</p>
-                </div>
-
-                <div style="background-color: rgba(255,255,255,0.1);">
-                    <h3 style="color:#fff;">Book Club</h3>
-                    <p>Poli Finance members read a book ...</p>
-                </div>
-
-                <div style="background-color: rgba(255,255,255,0.1);">
-                    <h3 style="color:#fff;">Study Group</h3>
-                    <p>Weekly meetings between members for Hard Skills ...</p>
+                <div style="flex: 1;">
+                    <h2 style="text-decoration: underline;">
+                        Wharton Online, University of Pennsylvania
+                    </h2>
+                    <p style="font-size: 1.1em; text-align: justify;">
+                        Our partnership with Wharton Online combines the academic excellence of 
+                        The Wharton School with a focus on delivering real-world, practical skills 
+                        that employers value. This collaboration is designed to provide a unique 
+                        blend of theory and hands-on application, equipping participants with the 
+                        tools and knowledge necessary to excel in the competitive finance industry. 
+                        Through Wharton Online, our team has benefited from a flexible learning 
+                        environment supported by interactive features such as virtual office hours, 
+                        one-on-one tutoring, and dynamic networking opportunities. These experiences 
+                        have enhanced our understanding of financial principles while providing 
+                        invaluable insights typically gained through years of industry mentorship. 
+                        We are excited to channel this knowledge into the IBA club, creating a 
+                        platform where members can bridge the gap between academic learning and 
+                        practical application. By hosting workshops, discussions, and training 
+                        sessions, we aim to empower our members with industry-relevant skills 
+                        and prepare them to thrive in the ever-evolving world of finance.
+                    </p>
                 </div>
             </div>
+
         </section>
     </main>
 </body>

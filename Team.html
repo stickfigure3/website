@@ -15,7 +15,7 @@
             position: relative;
             height: 100vh; /* Full height of the viewport */
             overflow: hidden;
-            background: url('images/IMG_5990_Original.jpg') center/cover no-repeat; /* Highlighted: Set the image as the background */
+            background: url('images/IMG_5990_Original.jpg') center/cover no-repeat;
             margin-top: 30px; /* Adjust this value */
         }
 
@@ -40,11 +40,10 @@
             top: 10%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: black; /* Changed to black */
             font-size: 4rem;
             font-weight: bold;
             z-index: 2;
-            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7); /* Adjusted for visibility */
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
         }
 
         .team-section {
@@ -91,10 +90,18 @@
             </div>
             <nav>
                 <ul class="dropdown-menu">
-                    <li class="menu-item"><a href="Home.html">HOME</a></li>
-                    <li class="menu-item"><a href="Partnerships.html">PARTNERSHIPS</a></li>
-                    <li class="menu-item"><a href="Team.html">TEAM</a></li>
-                    <li class="menu-item"><a href="Challenges.html">CHALLENGES</a></li>
+                    <li class="menu-item">
+                        <a href="Home.html">HOME</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="Partnerships.html">PARTNERSHIPS</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="Team.html">TEAM</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="Challenges.html">CHALLENGES</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -108,7 +115,19 @@
                 <source src="images/Team.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="team-header">The Team</div>
+            <!-- "THE TEAM" with transparent white highlight -->
+            <div class="team-header">
+                <span 
+                  style="
+                    background-color: rgba(255, 255, 255, 0.6);
+                    color: #000;
+                    border-radius: 12px; 
+                    padding: 0 15px;
+                  "
+                >
+                  The Team
+                </span>
+            </div>
         </section>
 
         <!-- Executive Management Section (4 squares) -->
@@ -117,7 +136,6 @@
             <div class="team-grid">
                 <!-- 1 -->
                 <div class="team-card">
-                    <!-- Same-size image for MAT -->
                     <img src="images/MAT.jpg" alt="Profile Photo" style="width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;">
                     <div class="team-card-content">
                         <h3>Matteo Tasso Tiete Da Silva</h3>
@@ -137,7 +155,6 @@
                 </div>
                 <!-- 2 -->
                 <div class="team-card">
-                    <!-- Same-size image for KYLE -->
                     <img src="images/KYLE.jpg" alt="Profile Photo" style="width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;">
                     <div class="team-card-content">
                         <h3>Kyle Kunishige</h3>
@@ -157,7 +174,6 @@
                 </div>
                 <!-- 3 -->
                 <div class="team-card">
-                    <!-- Same-size image for SAIF -->
                     <img src="images/SAIF.jpg" alt="Profile Photo" style="width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;">
                     <div class="team-card-content">
                         <h3>Saif Al-Hakeem</h3>
@@ -177,7 +193,6 @@
                 </div>
                 <!-- 4 -->
                 <div class="team-card">
-                    <!-- Same-size image for DAVDAWG -->
                     <img src="images/DAVDAWG.jpg" alt="Profile Photo" style="width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;">
                     <div class="team-card-content">
                         <h3>David Zhou</h3>
