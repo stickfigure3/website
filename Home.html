@@ -134,41 +134,51 @@
             .header-container {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: center; /* Centers the logo horizontally */
                 justify-content: center;
                 padding: 0;
-                background-color: transparent; /* No background color */
-                width: 100%; /* Ensures no gap on the left */
+                width: 100%;
+                text-align: center;
+                position: relative;
+            }
+
+            .header-container .logo {
+                margin-bottom: 10px; /* Adds spacing below the logo */
             }
 
             .header-container .logo img {
-                width: 70px;
+                display: block; /* Ensures the image behaves as a block element */
+                margin: 0 auto; /* Centers the logo */
+                width: 60px; /* Reduced size for smaller screens */
                 height: auto;
             }
 
             .dropdown-menu {
                 display: flex;
-                justify-content: space-evenly; /* Equal spacing between items */
-                padding: 0; /* Remove extra padding */
-                margin: 5px 0;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 100%;
+                padding: 0;
+                margin: 0;
                 list-style: none;
-                width: 100%; /* Ensure full width for alignment */
             }
 
             .menu-item a {
-                font-size: 0.5rem; /* Reduced font size */
-                padding: 3px 5px;
+                font-size: 0.7rem;
+                padding: 5px 0;
                 color: #fff;
                 text-decoration: none;
-                text-align: center; /* Center-align each menu item */
-                flex: 1; /* Evenly distribute space among menu items */
+                text-align: center;
+                flex: 1;
             }
 
             .section-1 {
-                height: 60vh;
+                height: 70vh;
                 display: flex;
                 align-items: center;
-                justify-content: center; /* Center the text and video */
+                justify-content: center;
+                text-align: center;
             }
 
             .section-1 video {
@@ -181,43 +191,47 @@
             }
 
             .right-content {
-                max-width: 95%; /* Fit text closer to the edges */
+                max-width: 90%;
                 padding: 10px;
-                text-align: center;
-                background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+                background-color: rgba(0, 0, 0, 0.7);
                 border-radius: 10px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
             }
 
             .right-content h1 {
-                font-size: 1.2rem; /* Smaller text for header */
+                font-size: 1rem;
                 margin-bottom: 8px;
             }
 
             .right-content p {
-                font-size: 0.8rem; /* Smaller text size for paragraph */
+                font-size: 0.8rem;
             }
 
             .about-us-section {
-                padding: 20px;
+                padding: 10px;
             }
 
             .about-us-section h2 {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
 
             .about-us-section p {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
             .contact-section {
                 flex-direction: column;
-                padding: 20px;
+                padding: 15px;
             }
 
             .map-container {
                 width: 100%;
-                height: 250px;
-                margin-bottom: 15px;
+                height: 200px;
+                margin-bottom: 10px;
             }
 
             .contact-container {
@@ -225,15 +239,12 @@
             }
 
             form input, form textarea, form button {
-                font-size: 14px;
+                font-size: 12px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Gray Banner -->
-    <div class="banner"></div>
-
     <!-- Header -->
     <header>
         <div class="header-container">

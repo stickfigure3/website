@@ -5,6 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partnership Page</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 568px) {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .header-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                background-color: transparent; /* No background color */
+                width: 100%; /* Ensures no gap on the left */
+            }
+
+            .header-container .logo img {
+                width: 70px;
+                height: auto;
+            }
+
+            .dropdown-menu {
+                display: flex;
+                justify-content: space-evenly; /* Equal spacing between items */
+                padding: 0; /* Remove extra padding */
+                margin: 5px 0;
+                list-style: none;
+                width: 100%; /* Ensure full width for alignment */
+            }
+
+            .menu-item a {
+                font-size: 0.5rem; /* Reduced font size */
+                padding: 3px 5px;
+                color: #fff;
+                text-decoration: none;
+                text-align: center; /* Center-align each menu item */
+                flex: 1; /* Evenly distribute space among menu items */
+            }
+
+            .section-1 {
+                height: 60vh;
+                display: flex;
+                align-items: center;
+                justify-content: center; /* Center the text and video */
+            }
+
+            .section-1 video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .right-content {
+                max-width: 95%; /* Fit text closer to the edges */
+                padding: 10px;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+                border-radius: 10px;
+            }
+
+            .right-content h1 {
+                font-size: 1.2rem; /* Smaller text for header */
+                margin-bottom: 8px;
+            }
+
+            .right-content p {
+                font-size: 0.8rem; /* Smaller text size for paragraph */
+            }
+
+            /* Adjust Partnerships Section for Mobile */
+            section > div {
+                display: flex;
+                flex-direction: column; /* Stack image on top of text */
+                align-items: center;
+                text-align: center;
+            }
+
+            section > div img {
+                max-width: 100%; /* Make image fit the screen width */
+                height: auto;
+                margin-bottom: 20px; /* Add spacing between image and text */
+            }
+
+            section > div h2 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                text-decoration: underline;
+            }
+
+            section > div p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Gray Banner (fixed behind header and navigation) -->
@@ -20,21 +126,11 @@
             </div>
             <nav>
                 <ul class="dropdown-menu">
-                    <li class="menu-item">
-                        <a href="Home.html">Home</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="resources.html">Resources</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="Team.html">Team</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="Challenges.html">Challenges</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="applications.html">Applications</a>
-                    </li>
+                    <li class="menu-item"><a href="Home.html">Home</a></li>
+                    <li class="menu-item"><a href="resources.html">Resources</a></li>
+                    <li class="menu-item"><a href="Team.html">Team</a></li>
+                    <li class="menu-item"><a href="Challenges.html">Challenges</a></li>
+                    <li class="menu-item"><a href="applications.html">Applications</a></li>
                 </ul>
             </nav>
         </div>
@@ -91,10 +187,9 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Partnerships List (Replaced Section) -->
+        <!-- Partnerships List -->
         <section style="width: 80%; margin: 0 auto; padding: 40px 0;">
-
-            <!-- First Partnership Row -->
+            <!-- First Partnership Row (Desktop) -->
             <div style="display: flex; align-items: center; margin-bottom: 20px;">
                 <div style="flex: 0 0 auto; margin-right: 20px;">
                     <img 
@@ -109,30 +204,14 @@
                     </h2>
                     <p style="font-size: 1.1em; text-align: justify;">
                         Wall Street Prep is a leading training organization, established in 2004 by
-investment bankers to address the gap between academic knowledge and the real-world skills needed in the financial services industry. They offer both instructor-led and online training programs designed to teach the practical tools required to succeed on the job. With a global faculty of over 90 seasoned professionals including investment bankers, private equity experts, and investment professionals Wall Street Prep has become a trusted resource for anyone looking to advance their career in finance.
+investment bankers to address the gap between academic knowledge and the real-world skills needed in the financial services industry.
                     </p>
                     <p style="font-size: 1.1em; text-align: justify;">
-                        Through our collaboration with Wall Street Prep, members of the Investment Banking Academy will be granted a significant discount to access to their premium training package. The premium training package is an industry-leading training program designed to provide comprehensive, hands-on financial modeling and valuation training. Widely used by top investment banks, private equity firms, and corporations, it equips students with the technical skills and practical knowledge required to perform in high finance roles. What’s Included:
-                    </p>
-                    <p style="font-size: 1.1em; text-align: justify;">
-                        DCF Modeling – Master Discounted Cash Flow analysis.</p>
-                    <p style="font-size: 1.1em; text-align: justify;">
-M&A Modeling – Learn deal structuring and acquisition modeling.</p>
-                    <p style="font-size: 1.1em; text-align: justify;">
-LBO Modeling – Build Leveraged Buyout models from scratch.</p>
-                    <p style="font-size: 1.1em; text-align: justify;">
-Comparable Company & Transaction Comps Modeling – Analyze companies and transactions like an investment banker.</p>
-                    <p style="font-size: 1.1em; text-align: justify;">
-Financial Statement Modeling – Construct 3-statement financial models.</p>
-                    <p style="font-size: 1.1em; text-align: justify;">
-Credential Certification: Earn a Financial and Valuation Modeling Certificate upon course completion
+                        Through our collaboration with Wall Street Prep, members of the Investment Banking Academy will be granted a significant discount to access their premium training package.
                     </p>
                 </div>
             </div>
             <hr>
-
-            <!-- Second Partnership Row -->
-
         </section>
     </main>
 </body>
