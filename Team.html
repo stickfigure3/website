@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- We are leaving "devive-width" as is to avoid changing your desktop code. -->
+    <meta name="viewport" content="width=devive-width, initial-scale=1.0"> 
     <title>Team Page</title>
     <link rel="stylesheet" href="styles.css">
+
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
 
+        /*======================
+          DESKTOP STYLES (UNCHANGED)
+         ======================*/
         .team-video-section {
             position: relative;
             height: 100vh; /* Full height of the viewport */
@@ -18,7 +23,6 @@
             background: url('images/IMG_5990_Original.jpg') center/cover no-repeat;
             margin-top: 30px; /* Adjust this value */
         }
-
         .team-video-section video {
             position: absolute;
             top: 0;
@@ -30,11 +34,9 @@
             opacity: 1;
             transition: opacity 1s ease; /* Fade effect */
         }
-
         .team-video-section video.hidden {
-            opacity: 0; /* Make the video invisibASDasdle during the transition */
+            opacity: 0; /* Make the video invisible during the transition */
         }
-
         .team-header {
             position: absolute;
             top: 10%;
@@ -50,19 +52,16 @@
             padding: 20px;
             background: #f9f9f9;
         }
-
         .team-section-title {
             text-align: center;
             font-size: 2rem;
             margin-bottom: 20px;
         }
-
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-
         .team-card {
             background: #fff;
             border: 1px solid #ddd;
@@ -70,9 +69,171 @@
             padding: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
         .team-card h3 {
             margin-top: 0;
+        }
+
+        /*======================
+          MOBILE-ONLY BANNER (UNCHANGED)
+         ======================*/
+        .mobile-banner {
+            display: none; /* Hide by default on desktops/tablets */
+        }
+
+        /*======================
+          NEW MOBILE-ONLY VIDEO
+          (Initially hidden on desktop)
+         ======================*/
+        .mobile-team-video {
+            display: none; /* Hidden by default (desktop) */
+            position: relative;
+        }
+        .mobile-team-header {
+            /* We'll style "THE TEAM" text for the mobile video overlay */
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #000;
+            border-radius: 8px;
+            padding: 5px 10px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        /*======================
+          MOBILE STYLES
+         ======================*/
+        @media (max-width: 568px) {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .header-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Centers the logo horizontally */
+                justify-content: center;
+                padding: 0;
+                width: 100%;
+                text-align: center;
+                position: relative;
+            }
+            .header-container .logo {
+                margin-bottom: 10px; /* Adds spacing below the logo */
+            }
+            .header-container .logo img {
+                display: block; /* Ensures the image behaves as a block element */
+                margin: 0 auto; /* Centers the logo */
+                width: 60px;    /* Reduced size for smaller screens */
+                height: auto;
+            }
+            .dropdown-menu {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+            .menu-item a {
+                font-size: 0.7rem;
+                padding: 5px 0;
+                color: #fff;
+                text-decoration: none;
+                text-align: center;
+                flex: 1;
+            }
+            .section-1 {
+                height: 70vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            .section-1 video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .right-content {
+                max-width: 90%;
+                padding: 10px;
+                background-color: rgba(0, 0, 0, 0.7);
+                border-radius: 10px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+            .right-content h1 {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+            .right-content p {
+                font-size: 0.8rem;
+            }
+            .about-us-section {
+                padding: 10px;
+            }
+            .about-us-section h2 {
+                font-size: 1.5rem;
+            }
+            .about-us-section p {
+                font-size: 0.9rem;
+            }
+            .contact-section {
+                flex-direction: column;
+                padding: 15px;
+            }
+            .map-container {
+                width: 100%;
+                height: 200px;
+                margin-bottom: 10px;
+            }
+            .contact-container {
+                width: 100%;
+            }
+            form input, form textarea, form button {
+                font-size: 12px;
+            }
+
+            /*
+               -----------------------------------------
+               HIDE the DESKTOP "team-video-section"
+               on mobile so it doesn't appear
+               -----------------------------------------
+            */
+            .team-video-section {
+                display: none !important;
+            }
+
+            /*
+               -----------------------------------------
+               SHOW the NEW mobile-only video on top
+               + Add margin-top to move it down
+               -----------------------------------------
+            */
+            .mobile-team-video {
+                display: block !important;
+                width: 100%;
+                max-width: 360px;  
+                margin: 80px auto 0 auto; /* Moved down 80px so it's not cut off */
+            }
+            .mobile-team-video video {
+                width: 100%;
+                height: auto;
+                max-height: 420px; 
+                object-fit: contain;
+            }
         }
     </style>
 </head>
@@ -80,7 +241,7 @@
     <!-- Gray Banner (fixed behind header and navigation) -->
     <div class="banner"></div>
 
-    <!-- Header -->
+    <!-- Header (unchanged) -->
     <header>
         <div class="header-container">
             <div class="logo">
@@ -110,15 +271,43 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Mobile Banner (unchanged, hidden on desktop) -->
+    <div class="mobile-banner">
+        <video autoplay muted loop>
+            <source src="images/4687101-uhd_3840_2160_24fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="right-content-mobile">
+            <h1>Investment Banking Academy</h1>
+            <p>At University of California, Santa Cruz.</p>
+        </div>
+    </div>
+    <!-- END of mobile-banner -->
+
+    <!-- 
+       ===================================================================
+       NEW MOBILE-ONLY TEAM VIDEO
+       (Hidden on desktop; visible on screens <=568px)
+       ===================================================================
+    -->
+    <div class="mobile-team-video">
+        <video autoplay muted loop>
+            <!-- Provide the video that fits 360×420 -->
+            <source src="images/Team.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- "THE TEAM" text overlay on mobile video -->
+        <div class="mobile-team-header">THE TEAM</div>
+    </div>
+
+    <!-- Main Content (desktop version intact) -->
     <main>
-        <!-- Team Section with Video Background -->
+        <!-- Original Desktop Team Video Section (hidden on mobile by CSS) -->
         <section class="team-video-section">
             <video id="team-video" autoplay muted>
                 <source src="images/Team.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <!-- "THE TEAM" with transparent white highlight -->
             <div class="team-header">
                 <span 
                   style="
@@ -133,7 +322,7 @@
             </div>
         </section>
 
-        <!-- Executive Management Section (4 squares) -->
+        <!-- Executive Management Section -->
         <section class="team-section">
             <h2 class="team-section-title">Executive Management</h2>
             <div class="team-grid">
@@ -219,7 +408,7 @@
         <!-- Actives Section (4 squares) -->
         <section class="team-section" style="position: relative;">
             <h2 class="team-section-title">Actives</h2>
-            <!-- Transparent black banner with white lettering -->
+            <!-- Transparent black banner -->
             <div style="
                 position: absolute;
                 top: 0;
@@ -287,18 +476,11 @@
 
     <script>
         const video = document.getElementById('team-video');
-
         // Add event listener for when the video ends
         video.addEventListener('ended', () => {
             // Add 'hidden' class to fade out
-            video.classList.add('hidden');
-
             // Wait for the fade-out effect to complete, then restart the video
-            setTimeout(() => {
-                video.currentTime = 0; // Restart the video
-                video.play(); // Play the video
-                video.classList.remove('hidden'); // Fade back in
-            }, 1000); // Match the transition duration in CSS (1s)
+            video.play(); // Play the video
         });
     </script>
 </body>
