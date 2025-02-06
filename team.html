@@ -1,487 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <!-- We are leaving "devive-width" as is to avoid changing your desktop code. -->
-    <meta name="viewport" content="width=devive-width, initial-scale=1.0"> 
-    <title>UCSC IBA</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <!-- We are leaving "devive-width" as is to avoid changing your desktop code. -->
+  <meta name="viewport" content="width=devive-width, initial-scale=1.0">
+  <title>UCSC IBA</title>
+  <link rel="stylesheet" href="styles.css">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        /*======================
-          DESKTOP STYLES (UNCHANGED)
-         ======================*/
-        .team-video-section {
-            position: relative;
-            height: 100vh; /* Full height of the viewport */
-            overflow: hidden;
-            background: url('images/IMG_5990_Original.jpg') center/cover no-repeat;
-            margin-top: 30px; /* Adjust this value */
-        }
-        .team-video-section video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-            opacity: 1;
-            transition: opacity 1s ease; /* Fade effect */
-        }
-        .team-video-section video.hidden {
-            opacity: 0; /* Make the video invisible during the transition */
-        }
-        .team-header {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 4rem;
-            font-weight: bold;
-            z-index: 2;
-            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
-        }
-
-        .team-section {
-            padding: 20px;
-            background: #f9f9f9;
-        }
-        .team-section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .team-card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .team-card h3 {
-            margin-top: 0;
-        }
-
-        /*======================
-          MOBILE-ONLY BANNER (UNCHANGED)
-         ======================*/
-        .mobile-banner {
-            display: none; /* Hide by default on desktops/tablets */
-        }
-
-        /*======================
-          NEW MOBILE-ONLY VIDEO
-          (Initially hidden on desktop)
-         ======================*/
-        .mobile-team-video {
-            display: none; /* Hidden by default (desktop) */
-            position: relative;
-        }
-        .mobile-team-header {
-            /* We'll style "THE TEAM" text for the mobile video overlay */
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.5rem;
-            background-color: rgba(255, 255, 255, 0.7);
-            color: #000;
-            border-radius: 8px;
-            padding: 5px 10px;
-            text-align: center;
-            z-index: 2;
-        }
-
-        /*======================
-          MOBILE STYLES
-         ======================*/
-        @media (max-width: 568px) {
-            body {
-                margin: 0;
-                padding: 0;
-            }
-            .header-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center; /* Centers the logo horizontally */
-                justify-content: center;
-                padding: 0;
-                width: 100%;
-                text-align: center;
-                position: relative;
-            }
-            .header-container .logo {
-                margin-bottom: 10px; /* Adds spacing below the logo */
-            }
-            .header-container .logo img {
-                display: block; /* Ensures the image behaves as a block element */
-                margin: 0 auto; /* Centers the logo */
-                width: 60px;    /* Reduced size for smaller screens */
-                height: auto;
-            }
-            .dropdown-menu {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-evenly;
-                width: 100%;
-                padding: 0;
-                margin: 0;
-                list-style: none;
-            }
-            .menu-item a {
-                font-size: 0.7rem;
-                padding: 5px 0;
-                color: #fff;
-                text-decoration: none;
-                text-align: center;
-                flex: 1;
-            }
-            .section-1 {
-                height: 70vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-            }
-            .section-1 video {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-            .right-content {
-                max-width: 90%;
-                padding: 10px;
-                background-color: rgba(0, 0, 0, 0.7);
-                border-radius: 10px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                text-align: center;
-            }
-            .right-content h1 {
-                font-size: 1rem;
-                margin-bottom: 8px;
-            }
-            .right-content p {
-                font-size: 0.8rem;
-            }
-            .about-us-section {
-                padding: 10px;
-            }
-            .about-us-section h2 {
-                font-size: 1.5rem;
-            }
-            .about-us-section p {
-                font-size: 0.9rem;
-            }
-            .contact-section {
-                flex-direction: column;
-                padding: 15px;
-            }
-            .map-container {
-                width: 100%;
-                height: 200px;
-                margin-bottom: 10px;
-            }
-            .contact-container {
-                width: 100%;
-            }
-            form input, form textarea, form button {
-                font-size: 12px;
-            }
-
-            /*
-               -----------------------------------------
-               HIDE the DESKTOP "team-video-section"
-               on mobile so it doesn't appear
-               -----------------------------------------
-            */
-            .team-video-section {
-                display: none !important;
-            }
-
-            /*
-               -----------------------------------------
-               SHOW the NEW mobile-only video on top
-               + Add margin-top to move it down
-               -----------------------------------------
-            */
-            .mobile-team-video {
-                display: block !important;
-                width: 100%;
-                max-width: 360px;  
-                margin: 80px auto 0 auto; /* Moved down 80px so it's not cut off */
-            }
-            .mobile-team-video video {
-                width: 100%;
-                height: auto;
-                max-height: 420px; 
-                object-fit: contain;
-            }
-        }
-    </style>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    /*======================
+      DESKTOP STYLES (UNCHANGED)
+    ======================*/
+    .team-video-section {
+      position: relative;
+      height: 100vh; /* Full height of the viewport */
+      overflow: hidden;
+      background: url('images/IMG_5990_Original.jpg') center/cover no-repeat;
+      margin-top: 30px; /* Adjust this value */
+    }
+    .team-video-section video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 1s ease; /* Fade effect */
+    }
+    .team-video-section video.hidden {
+      opacity: 0; /* Make the video invisible during the transition */
+    }
+    .team-header {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4rem;
+      font-weight: bold;
+      z-index: 2;
+      text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
+    }
+    .team-section {
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    .team-section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .team-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .team-card h3 {
+      margin-top: 0;
+    }
+    /*======================
+      MOBILE-ONLY BANNER (UNCHANGED)
+    ======================*/
+    .mobile-banner {
+      display: none; /* Hide by default on desktops/tablets */
+    }
+    /*======================
+      NEW MOBILE-ONLY VIDEO
+      (Initially hidden on desktop)
+    ======================*/
+    .mobile-team-video {
+      display: none; /* Hidden by default (desktop) */
+      position: relative;
+    }
+    .mobile-team-header {
+      /* Style "THE TEAM" text overlay on mobile video */
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      background-color: rgba(255, 255, 255, 0.7);
+      color: #000;
+      border-radius: 8px;
+      padding: 5px 10px;
+      text-align: center;
+      z-index: 2;
+    }
+    /*======================
+      MOBILE STYLES
+    ======================*/
+    @media (max-width: 568px) {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the logo horizontally */
+        justify-content: center;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        position: relative;
+      }
+      .header-container .logo {
+        margin-bottom: 10px; /* Adds spacing below the logo */
+      }
+      .header-container .logo img {
+        display: block; /* Ensures the image behaves as a block element */
+        margin: 0 auto; /* Centers the logo */
+        width: 60px;    /* Reduced size for smaller screens */
+        height: auto;
+      }
+      .dropdown-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      .menu-item a {
+        font-size: 0.7rem;
+        padding: 5px 0;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        flex: 1;
+      }
+      .section-1 {
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .section-1 video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .right-content {
+        max-width: 90%;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      .right-content h1 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+      .right-content p {
+        font-size: 0.8rem;
+      }
+      .about-us-section {
+        padding: 10px;
+      }
+      .about-us-section h2 {
+        font-size: 1.5rem;
+      }
+      .about-us-section p {
+        font-size: 0.9rem;
+      }
+      .contact-section {
+        flex-direction: column;
+        padding: 15px;
+      }
+      .map-container {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 10px;
+      }
+      .contact-container {
+        width: 100%;
+      }
+      form input, form textarea, form button {
+        font-size: 12px;
+      }
+      /*
+         -----------------------------------------
+         HIDE the DESKTOP "team-video-section"
+         on mobile so it doesn't appear
+         -----------------------------------------
+      */
+      .team-video-section {
+        display: none !important;
+      }
+      /*
+         -----------------------------------------
+         SHOW the NEW mobile-only video on top
+         + Add margin-top to move it down
+         -----------------------------------------
+      */
+      .mobile-team-video {
+        display: block !important;
+        width: 100%;
+        max-width: 360px;
+        margin: 80px auto 0 auto; /* Moved down 80px so it's not cut off */
+      }
+      .mobile-team-video video {
+        width: 100%;
+        height: auto;
+        max-height: 420px;
+        object-fit: contain;
+      }
+    }
+  </style>
+  <!-- Include Papa Parse from a CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 </head>
 <body>
-    <!-- Gray Banner (fixed behind header and navigation) -->
-    <div class="banner"></div>
+  <!-- Gray Banner (fixed behind header and navigation) -->
+  <div class="banner"></div>
 
-    <!-- Header (unchanged) -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <a href="home.html">
-                    <img src="images/iba-pick.jpg" alt="Logo" class="logo-image">
-                </a>
-            </div>
-            <nav>
-                <ul class="dropdown-menu">
-                    <li class="menu-item">
-                        <a href="home.html">Home</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="resources.html">Resources</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="team.html">Team</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="challenges.html">Challenges</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="applications.html">Applications</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Mobile Banner (unchanged, hidden on desktop) -->
-    <div class="mobile-banner">
-        <video autoplay muted loop>
-            <source src="images/4687101-uhd_3840_2160_24fps.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="right-content-mobile">
-            <h1>Investment Banking Academy</h1>
-            <p>At University of California, Santa Cruz.</p>
-        </div>
+  <!-- Header (unchanged) -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="home.html">
+          <img src="images/iba-pick.jpg" alt="Logo" class="logo-image">
+        </a>
+      </div>
+      <nav>
+        <ul class="dropdown-menu">
+          <li class="menu-item"><a href="home.html">Home</a></li>
+          <li class="menu-item"><a href="resources.html">Resources</a></li>
+          <li class="menu-item"><a href="team.html">Team</a></li>
+          <li class="menu-item"><a href="challenges.html">Challenges</a></li>
+          <li class="menu-item"><a href="applications.html">Applications</a></li>
+        </ul>
+      </nav>
     </div>
-    <!-- END of mobile-banner -->
+  </header>
 
-    <!-- 
-       ===================================================================
-       NEW MOBILE-ONLY TEAM VIDEO
-       (Hidden on desktop; visible on screens <=568px)
-       ===================================================================
-    -->
-    <div class="mobile-team-video">
-        <video autoplay muted loop>
-            <!-- Provide the video that fits 360×420 -->
-            <source src="images/Team.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <!-- "THE TEAM" text overlay on mobile video -->
-        <div class="mobile-team-header">THE TEAM</div>
+  <!-- Mobile Banner (unchanged, hidden on desktop) -->
+  <div class="mobile-banner">
+    <video autoplay muted loop>
+      <source src="images/4687101-uhd_3840_2160_24fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="right-content-mobile">
+      <h1>Investment Banking Academy</h1>
+      <p>At University of California, Santa Cruz.</p>
     </div>
+  </div>
+  <!-- END of mobile-banner -->
 
-    <!-- Main Content (desktop version intact) -->
-    <main>
-        <!-- Original Desktop Team Video Section (hidden on mobile by CSS) -->
-        <section class="team-video-section">
-            <video id="team-video" autoplay muted>
-                <source src="images/Team.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="team-header">
-                <span 
-                  style="
-                    background-color: rgba(255, 255, 255, 0.6);
-                    color: #000;
-                    border-radius: 12px; 
-                    padding: 0 15px;
-                  "
-                >
-                  The Team
-                </span>
-            </div>
-        </section>
+  <!--
+     ===================================================================
+     NEW MOBILE-ONLY TEAM VIDEO
+     (Hidden on desktop; visible on screens <=568px)
+     ===================================================================
+  -->
+  <div class="mobile-team-video">
+    <video autoplay muted loop>
+      <!-- Provide the video that fits 360×420 -->
+      <source src="images/Team.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- "THE TEAM" text overlay on mobile video -->
+    <div class="mobile-team-header">THE TEAM</div>
+  </div>
 
-        <!-- Executive Management Section -->
-        <section class="team-section">
-            <h2 class="team-section-title">Executive Management</h2>
-            <div class="team-grid">
-                <!-- 1 -->
-                <div class="team-card">
-                    <img src="images/MAT.jpg" alt="Profile Photo" style="width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;">
-                    <div class="team-card-content">
-                        <h3>Matteo Tasso Tiete Da Silva</h3>
-                        <p>Founder</p>
-                        <p>Major: Business Management Economics</p>
-                        <p>
-                            <a
-                              href="https://www.linkedin.com/in/matteo-tasso-tiete-da-silva-76b412272/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              LinkedIn
-                            </a>
-                        </p>
-                        <p>Mtasso@ucsciba.org</p>
-                    </div>
-                </div>
-                <!-- 2 -->
-                <div class="team-card">
-                    <img src="images/KYLE.jpg" alt="Profile Photo" style="width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;">
-                    <div class="team-card-content">
-                        <h3>Kyle Kunishige</h3>
-                        <p>Founder</p>
-                        <p>Major: Business Management Economics</p>
-                        <p>
-                            <a
-                              href="https://www.linkedin.com/in/kylekunishige/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              LinkedIn
-                            </a>
-                        </p>
-                        <p>Kkunishige@ucsciba.org</p>
-                    </div>
-                </div>
-                <!-- 3 -->
-                <div class="team-card">
-                    <img src="images/SAIF.jpg" alt="Profile Photo" style="width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;">
-                    <div class="team-card-content">
-                        <h3>Saif Al-Hakeem</h3>
-                        <p>Founder</p>
-                        <p>Major: Business Management Economics</p>
-                        <p>
-                            <a
-                              href="https://www.linkedin.com/in/saif-al-hakeem/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              LinkedIn
-                            </a>
-                        </p>
-                        <p>Salhakeem@ucsciba.org</p>
-                    </div>
-                </div>
-                <!-- 4 -->
-                <div class="team-card">
-                    <img src="images/DAVDAWG.jpg" alt="Profile Photo" style="width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;">
-                    <div class="team-card-content">
-                        <h3>David Zhou</h3>
-                        <p>Founder</p>
-                        <p>Major: Business Management Economics</p>
-                        <p>
-                            <a
-                              href="https://www.linkedin.com/in/daviddzzhou/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              LinkedIn
-                            </a>
-                        </p>
-                        <p>Dzhou@ucsciba.org</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Main Content (desktop version updated to be CSV-driven) -->
+  <main>
+    <!-- Desktop Team Video Section (unchanged) -->
+    <section class="team-video-section">
+      <video id="team-video" autoplay muted>
+        <source src="images/Team.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="team-header">
+        <span style="background-color: rgba(255, 255, 255, 0.6); color: #000; border-radius: 12px; padding: 0 15px;">
+          The Team
+        </span>
+      </div>
+    </section>
 
-        <!-- Actives Section (4 squares) -->
-        <section class="team-section" style="position: relative;">
-            <h2 class="team-section-title">Actives</h2>
-            <!-- Transparent black banner -->
-            <div style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.7);
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                z-index: 10;
-            ">
-                <h2 style="color: white; margin: 0; font-size: 2rem;">Comming soon!</h2>
-                <p style="color: white; margin: 0; font-size: 1rem;">Apply now you could be next!</p>
-            </div>
-            <div class="team-grid">
-                <!-- Active 1 -->
-                <div class="team-card">
-                    <img src="images/placeholder.jpg" alt="Profile Photo" style="width:100%; height:auto;">
-                    <div class="team-card-content">
-                        <h3>Active Member 1</h3>
-                        <p>Title</p>
-                        <p>Major: Industrial Engineering</p>
-                        <p>LinkedIn</p>
-                        <p>member1@iba.com</p>
-                    </div>
-                </div>
-                <!-- Active 2 -->
-                <div class="team-card">
-                    <img src="images/placeholder.jpg" alt="Profile Photo" style="width:100%; height:auto;">
-                    <div class="team-card-content">
-                        <h3>Active Member 2</h3>
-                        <p>Title</p>
-                        <p>Major: Industrial Engineering</p>
-                        <p>LinkedIn</p>
-                        <p>member2@iba.com</p>
-                    </div>
-                </div>
-                <!-- Active 3 -->
-                <div class="team-card">
-                    <img src="images/placeholder.jpg" alt="Profile Photo" style="width:100%; height:auto;">
-                    <div class="team-card-content">
-                        <h3>Active Member 3</h3>
-                        <p>Title</p>
-                        <p>Major: Industrial Engineering</p>
-                        <p>LinkedIn</p>
-                        <p>member3@iba.com</p>
-                    </div>
-                </div>
-                <!-- Active 4 -->
-                <div class="team-card">
-                    <img src="images/placeholder.jpg" alt="Profile Photo" style="width:100%; height:auto;">
-                    <div class="team-card-content">
-                        <h3>Active Member 4</h3>
-                        <p>Title</p>
-                        <p>Major: Industrial Engineering</p>
-                        <p>LinkedIn</p>
-                        <p>member4@iba.com</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- CSV-driven Sections -->
 
-    <script>
-        const video = document.getElementById('team-video');
-        // Add event listener for when the video ends
-        video.addEventListener('ended', () => {
-            // Add 'hidden' class to fade out
-            // Wait for the fade-out effect to complete, then restart the video
-            video.play(); // Play the video
+    <!-- Board / Executive Management Section -->
+    <section id="board-members" class="team-section">
+      <h2 class="team-section-title">Executive Management</h2>
+      <div class="team-grid">
+        <!-- Board member cards will be injected here -->
+      </div>
+    </section>
+
+    <!-- Active Members Section -->
+    <section id="active-members" class="team-section">
+      <h2 class="team-section-title">Actives</h2>
+      <div class="team-grid">
+        <!-- Active member cards will be injected here -->
+      </div>
+    </section>
+
+    <!-- Special Members Section -->
+    <section id="special-members" class="team-section">
+      <h2 class="team-section-title">Special Members</h2>
+      <div class="team-grid">
+        <!-- Special member cards will be injected here -->
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // (Optional) Video restart logic remains unchanged:
+    const video = document.getElementById('team-video');
+    video.addEventListener('ended', () => {
+      video.play();
+    });
+
+    // Helper function to build a team card (adjust the image style based on the category)
+    function createCard(member) {
+      // Use a different image style for Active members if desired.
+      const imgStyle = (member.Category.trim().toLowerCase() === "active")
+        ? 'width:100%; height:auto;'
+        : 'width:200px; height:200px; object-fit:cover; display:block; margin:0 auto;';
+
+      // If LinkedIn is not available, skip the link.
+      const linkedinHTML = (member.LinkedIn && member.LinkedIn.trim() !== "" && member.LinkedIn.trim().toUpperCase() !== "N/A")
+        ? `<p><a href="${member.LinkedIn}" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>`
+        : '';
+
+      return `
+        <div class="team-card">
+          <img src="${member.Image}" alt="Profile Photo" style="${imgStyle}">
+          <div class="team-card-content">
+            <h3>${member.Name}</h3>
+            <p>${member.Title}</p>
+            <p>Major: ${member.Major}</p>
+            ${linkedinHTML}
+            <p>${member.Email}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    // Fetch and parse the CSV file and inject the cards into the proper sections.
+    fetch('members.csv')
+      .then(response => response.text())
+      .then(csvText => {
+        Papa.parse(csvText, {
+          header: true,
+          complete: function(results) {
+            const members = results.data;
+            // For each member, decide which section to add the card to.
+            members.forEach(member => {
+              const category = member.Category.trim().toLowerCase();
+              let containerSelector = "";
+              if (category === "board") {
+                containerSelector = "#board-members .team-grid";
+              } else if (category === "active") {
+                containerSelector = "#active-members .team-grid";
+              } else if (category === "special") {
+                containerSelector = "#special-members .team-grid";
+              }
+              if (containerSelector) {
+                const container = document.querySelector(containerSelector);
+                container.innerHTML += createCard(member);
+              }
+            });
+          }
         });
-    </script>
+      })
+      .catch(err => console.error("Error fetching/parsing CSV file:", err));
+  document.addEventListener('DOMContentLoaded', function() {
+  console.log("DOM fully loaded and parsed");
+
+  fetch('members.csv')
+    .then(response => {
+      console.log("Fetch response status:", response.status);
+      return response.text();
+    })
+    .then(csvText => {
+      console.log("CSV text loaded:", csvText.substring(0, 100)); // Log first 100 chars
+      Papa.parse(csvText, {
+        header: true,
+        complete: function(results) {
+          console.log("Parsed CSV data:", results.data);
+          results.data.forEach(member => {
+            console.log("Processing member:", member);
+            // (Your card creation and DOM insertion code)
+          });
+        }
+      });
+    })
+    .catch(err => console.error("Error fetching/parsing CSV file:", err));
+});
+</script>
+
+
 </body>
 </html>
