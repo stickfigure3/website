@@ -1,0 +1,117 @@
+.form-wrapper {
+  margin-top: 3.5rem;
+  background: linear-gradient(120deg, rgba(15, 23, 42, 0.92), rgba(37, 99, 235, 0.92));
+  border-radius: 2rem;
+  padding: clamp(2rem, 4vw, 3rem);
+  color: #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.25), transparent 55%);
+  pointer-events: none;
+}
+
+.interest-form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-heading {
+  max-width: 640px;
+}
+
+.form-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.1rem);
+}
+
+.form-subtitle {
+  margin: 1rem 0 0;
+  color: rgba(248, 250, 252, 0.75);
+}
+
+.form-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.form-field span {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: rgba(15, 23, 42, 0.6);
+  color: #f8fafc;
+  border-radius: 0.9rem;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(226, 232, 240, 0.5);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: rgba(56, 189, 248, 0.9);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
+}
+
+.form-field--full {
+  grid-column: 1 / -1;
+}
+
+.form-button {
+  align-self: flex-start;
+  border: none;
+  background: linear-gradient(120deg, #38bdf8 0%, #2563eb 100%);
+  color: #f8fafc;
+  font-weight: 600;
+  padding: 0.9rem 2.4rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 18px 32px rgba(56, 189, 248, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 36px rgba(56, 189, 248, 0.35);
+}
+
+.form-confirmation {
+  margin: 0;
+  font-weight: 500;
+  color: rgba(248, 250, 252, 0.85);
+}
+
+@media (max-width: 640px) {
+  .form-button {
+    width: 100%;
+    text-align: center;
+  }
+}
