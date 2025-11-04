@@ -14,8 +14,8 @@ const Footer = () => (
         <p>© {new Date().getFullYear()} International Business Association. All rights reserved.</p>
         <p>
           Questions?{" "}
-          <a href="mailto:iba-club@example.com" className="footer-link">
-            iba-club@example.com
+          <a href="mailto:ucsciba@gmail.com" className="footer-link">
+            ucsciba@gmail.com
           </a>
         </p>
       </div>

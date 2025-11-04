@@ -122,7 +122,7 @@ const CaseStudyCarousel = ({
       }
 
       event.preventDefault();
-      const delta = (event.clientX - dragState.startX) * 1.35;
+      const delta = (event.clientX - dragState.startX) * 0.8;
       viewport.scrollLeft = dragState.scrollLeft - delta;
       dragState.lastX = event.clientX;
     };
@@ -148,7 +148,7 @@ const CaseStudyCarousel = ({
 
       event.preventDefault();
       viewport.scrollBy({
-        left: event.deltaY * 1.2,
+        left: event.deltaY * 0.6,
         behavior: "auto"
       });
 
@@ -196,6 +196,16 @@ const CaseStudyCarousel = ({
     });
   };
 
+  const handlePrevious = () => {
+    const newIndex = activeIndex > 0 ? activeIndex - 1 : slides.length - 1;
+    scrollToIndex(newIndex);
+  };
+
+  const handleNext = () => {
+    const newIndex = activeIndex < slides.length - 1 ? activeIndex + 1 : 0;
+    scrollToIndex(newIndex);
+  };
+
   return (
     <Section
       id={id}
@@ -210,6 +220,26 @@ const CaseStudyCarousel = ({
           <span className="case-carousel__hint-label">Swipe</span>
           <span className="case-carousel__hint-arrow">-&gt;</span>
         </div>
+        <button
+          className="case-carousel__arrow case-carousel__arrow--prev"
+          onClick={handlePrevious}
+          aria-label="Previous slide"
+          type="button"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+        <button
+          className="case-carousel__arrow case-carousel__arrow--next"
+          onClick={handleNext}
+          aria-label="Next slide"
+          type="button"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
         <div className="case-carousel__viewport" ref={viewportRef}>
           {slides.map((slide, index) => {
             const isActive = index === activeIndex;
